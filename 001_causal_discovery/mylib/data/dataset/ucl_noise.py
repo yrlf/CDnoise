@@ -4,7 +4,7 @@ import time
 import warnings
 
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn import cluster, datasets, mixture
 from sklearn.neighbors import kneighbors_graph

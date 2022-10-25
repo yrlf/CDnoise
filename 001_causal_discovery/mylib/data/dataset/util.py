@@ -170,10 +170,11 @@ def noisify_multiclass_symmetric(y_train, noise, random_state=None, nb_classes=1
         for i in range(1, nb_classes-1):
             P[i, i] = 1. - n
         P[nb_classes-1, nb_classes-1] = 1. - n
-
+        print(P)
         y_train_noisy = multiclass_noisify(y_train, P=P, random_state=random_state)
         actual_noise = (y_train_noisy != y_train).mean()
-        assert actual_noise > 0.0
+        print('Actual noise %.2f' % actual_noise)
+        assert actual_noise >= 0.0
         # print('Actual noise %.2f' % actual_noise)
         y_train = y_train_noisy
 
