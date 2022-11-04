@@ -14,6 +14,9 @@ import scipy
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import collections
+
+import cloth1m_labels
+
 # adjust the load data function to load training data only
 from mylib.data.data_loader.load_ucidata import load_ucidata2
 

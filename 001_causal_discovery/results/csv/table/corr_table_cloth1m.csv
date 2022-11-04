@@ -1,0 +1,2 @@
+dataset,noise_type,initial_noise,corr/p-value,slope,stderr
+cloth1m,sym,0,1.0,0.18048312499999988,0.0001407099478935244

@@ -1,0 +1,16 @@
+,output,output,output,output,output,output,output
+noise_type,instance,instance,instance,pair,pair,sym,sym
+initial_noise,0,0.2,0.4,0.2,0.4,0.2,0.4
+dataset,,,,,,,
+balancescale,\makecell{0.1815\pm0.0112\\ p=1.0} &,\makecell{0.1311\pm0.0068\\ p=0.9991} &,\makecell{0.0961\pm0.0126\\ p=0.3833} &,\makecell{0.1879\pm0.0143\\ p=0.9999} &,\makecell{0.1364\pm0.0076\\ p=0.9993} &,\makecell{0.1691\pm0.0129\\ p=0.9997} &,\makecell{0.1151\pm0.0089\\ p=0.9351} &
+cifar10,\makecell{0.8137\pm0.0012\\ p=1.0} &,\makecell{0.6926\pm0.0005\\ p=1.0} &,\makecell{0.4977\pm0.0006\\ p=1.0} &,\makecell{0.6968\pm0.0007\\ p=1.0} &,\makecell{0.4955\pm0.0012\\ p=1.0} &,\makecell{0.6992\pm0.0006\\ p=1.0} &,\makecell{0.5009\pm0.0014\\ p=1.0} &
+cifar10n_aggre,\makecell{0.8137\pm0.0012\\ p=1.0} &,\makecell{0.8254\pm0.0009\\ p=1.0} &,\makecell{0.8254\pm0.0009\\ p=1.0} &,\makecell{0.8254\pm0.0009\\ p=1.0} &,\makecell{0.8254\pm0.0009\\ p=1.0} &,\makecell{0.8254\pm0.0009\\ p=1.0} &,\makecell{0.8254\pm0.0009\\ p=1.0} &
+cifar10n_random1,\makecell{0.8137\pm0.0012\\ p=1.0} &,\makecell{0.7444\pm0.0012\\ p=1.0} &,\makecell{0.7444\pm0.0012\\ p=1.0} &,\makecell{0.7444\pm0.0012\\ p=1.0} &,\makecell{0.7444\pm0.0012\\ p=1.0} &,\makecell{0.7444\pm0.0012\\ p=1.0} &,\makecell{0.7444\pm0.0012\\ p=1.0} &
+cifar10n_random2,\makecell{0.8137\pm0.0012\\ p=1.0} &,\makecell{0.7375\pm0.0009\\ p=1.0} &,\makecell{0.7375\pm0.0009\\ p=1.0} &,\makecell{0.7375\pm0.0009\\ p=1.0} &,\makecell{0.7375\pm0.0009\\ p=1.0} &,\makecell{0.7375\pm0.0009\\ p=1.0} &,\makecell{0.7375\pm0.0009\\ p=1.0} &
+cifar10n_random3,\makecell{0.8137\pm0.0012\\ p=1.0} &,\makecell{0.7385\pm0.0008\\ p=1.0} &,\makecell{0.7385\pm0.0008\\ p=1.0} &,\makecell{0.7385\pm0.0008\\ p=1.0} &,\makecell{0.7385\pm0.0008\\ p=1.0} &,\makecell{0.7385\pm0.0008\\ p=1.0} &,\makecell{0.7385\pm0.0008\\ p=1.0} &
+cifar10n_worst,\makecell{0.8137\pm0.0012\\ p=1.0} &,\makecell{0.5264\pm0.0007\\ p=1.0} &,\makecell{0.5264\pm0.0007\\ p=1.0} &,\makecell{0.5264\pm0.0007\\ p=1.0} &,\makecell{0.5264\pm0.0007\\ p=1.0} &,\makecell{0.523\pm0.0011\\ p=1.0} &,\makecell{0.523\pm0.0011\\ p=1.0} &
+cloth1m,\makecell{0.1805\pm0.0001\\ p=1.0} &,,,,,,
+krkp,\makecell{0.0195\pm0.0042\\ p=0.0} &,\makecell{0.0174\pm0.0062\\ p=0.0} &,\makecell{0.0256\pm0.0047\\ p=0.0} &,\makecell{0.0162\pm0.0021\\ p=0.0} &,\makecell{0.0137\pm0.0028\\ p=0.0} &,\makecell{0.0162\pm0.0021\\ p=0.0} &,\makecell{0.0137\pm0.0028\\ p=0.0} &
+secstr,\makecell{0.0362\pm0.0012\\ p=0.0} &,\makecell{0.029\pm0.001\\ p=0.0} &,\makecell{0.0134\pm0.0011\\ p=0.0} &,\makecell{0.0264\pm0.0009\\ p=0.0} &,\makecell{0.0119\pm0.0012\\ p=0.0} &,\makecell{0.0264\pm0.0009\\ p=0.0} &,\makecell{0.0119\pm0.0012\\ p=0.0} &
+splice,\makecell{0.0237\pm0.0039\\ p=0.0} &,\makecell{0.0308\pm0.004\\ p=0.0} &,\makecell{0.036\pm0.0058\\ p=0.0} &,\makecell{0.0414\pm0.006\\ p=0.0} &,\makecell{0.0416\pm0.0033\\ p=0.0} &,\makecell{0.051\pm0.0063\\ p=0.0} &,\makecell{0.0357\pm0.0039\\ p=0.0} &
+waveform,\makecell{0.2236\pm0.0049\\ p=1.0} &,\makecell{0.1785\pm0.0034\\ p=1.0} &,\makecell{0.1304\pm0.0022\\ p=1.0} &,\makecell{0.2434\pm0.0022\\ p=1.0} &,\makecell{0.2442\pm0.0032\\ p=1.0} &,\makecell{0.1879\pm0.0034\\ p=1.0} &,\makecell{0.1079\pm0.003\\ p=0.9855} &

@@ -5,6 +5,7 @@ import scipy
 from scipy.optimize import linear_sum_assignment
 from sklearn import metrics
 from random import seed
+import random
 from mylib.utils import fix_seed
 from mylib.data.data_loader import load_ucidata
 import collections
@@ -15,7 +16,7 @@ import pandas as pd
 from kmeans import run_kmeans
 import os
 import argparse
-
+import cloth1m_labels
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import collections
@@ -405,8 +406,8 @@ if args.dataset == "cifar10" or args.dataset == "cifar10n_worst" or args.dataset
             flip_rate_fixed=args.flip_rate_fixed, 
             augment=False
         )
-elif args.dataset == "imagenet10":
-    pass
+#elif args.dataset == "cloth1m":
+    
 
 else:
     if args.seed is not None:
@@ -553,11 +554,28 @@ def main():
         #primeY = get_prime_Y(train_dataset.dataset.clean_targets, labels_pred, idx2[1])
     
 
-        
+
 
     else:
         # primeY is obtained from K-means unsupervised learning -> we use this as esitmated Clean Y
-        primeY = run_kmeans2(train_dataset.dataset)
+        if (args.dataset == "cloth1m"):
+               
+            cluster = np.array(cloth1m_labels.c)
+            noise_label = np.array(cloth1m_labels.ny)
+            length_cloth1m = len(cluster)
+            # randomly select 80% index
+            random_index = np.random.choice(range(length_cloth1m), int(length_cloth1m*0.8),replace=False)
+            # choose from clean_label according to random_index
+            selected_cluster = cluster[random_index]
+            initial_noise_labels = noise_label[random_index]
+        
+
+            idx2 =_hungarian_match(selected_cluster, initial_noise_labels)
+            prime_Y=get_prime_Y(initial_noise_labels, selected_cluster, idx2[1])
+
+        else:
+            print(args.dataset)
+            primeY = run_kmeans2(train_dataset.dataset)
 
     # MODIFIED: directly add SYM noise on the noise label
     if (args.dataset == "cifar10"):
@@ -581,49 +599,26 @@ def main():
     noisy_rate_list = np.arange(0.1, 1, 0.1)
 
     for noise_rate in noisy_rate_list:
-        train_noisy_labels, _, _ = noisify_multiclass_symmetric(initial_noise_labels.copy(
-        )[:, np.newaxis], noise_rate, random_state=args.seed+1, nb_classes=num_classes)
+        if (args.dataset == "cloth1m"):
+            initial_noise_labels = noise_label[random_index]
+            train_noisy_labels, _, _ = noisify_multiclass_symmetric(initial_noise_labels.copy(
+            )[:, np.newaxis], noise_rate, random_state=args.seed+1, nb_classes=14)
 
-        if args.dataset == "DEBUG-yxguassian":
-            clean_labels = train_dataset.dataset.clean_targets
-            # delist the train_noisy_labels
-            train_noisy_labels2 = [item for sublist in train_noisy_labels for item in sublist]
-            
-            #print(f"train noise label legnth is: ",len(train_noisy_labels))
-            #print(f"clean label legnth is: ",len(clean_labels))
-            #acc1 = (train_noisy_labels2==clean_labels).sum()/len(clean_labels)
-            #acc2 = (initial_noise_labels==clean_labels).sum()/len(clean_labels)
-            
-            #print(train_noisy_labels)
-
-            #print(f"total number of same labels between train_noisy_labels and clean labels", (train_noisy_labels==clean_labels).sum())
-
-            #print(f"total number of same labels between inital_noise_labels and clean labels", (initial_noise_labels==clean_labels).sum())
-
-            #print("noise rate is: ", noise_rate)
-            #print(f"train_noisy_labels vs. clean Y: {acc1}")
-            #print(f"initial_noise_labels vs. clean Y: {acc2}")
-
+            error_rate = 1-(train_noisy_labels[:,0]==prime_Y).sum()/len(train_noisy_labels)
+            print(error_rate)
         
+        else:
+            train_noisy_labels, _, _ = noisify_multiclass_symmetric(initial_noise_labels.copy(
+            )[:, np.newaxis], noise_rate, random_state=args.seed+1, nb_classes=num_classes)
+            
 
-        # calcualte error rate on the noisy labels
-        res2 = (primeY == train_noisy_labels[:, 0])
-        count2 = collections.Counter(res2)
-        error_rate = count2[False]/(count2[False]+count2[True])
-        #print("error rate is", error_rate)
+            # calcualte error rate on the noisy labels
+            #print(primeY.shape, train_noisy_labels.shape)
+            res2 = (primeY == train_noisy_labels[:, 0])
+            print(res2)
+            count2 = collections.Counter(res2)
+            error_rate = count2[False]/(count2[False]+count2[True])
 
-        # #error_rate = cross_entropy_error(train_noisy_labels, primeY)
-        # # count number of 0 in primeY
-        # pcount = collections.Counter(primeY)
-        # ncount = collections.Counter(train_noisy_labels[:, 0])
-        
-        # py0 = pcount[0]/(pcount[0]+pcount[1])
-        # py1 = pcount[1]/(pcount[0]+pcount[1])
-
-        # ny0= ncount[0]/(ncount[0]+ncount[1])
-        # ny1= ncount[1]/(ncount[0]+ncount[1])
-
-        # error_rate = - ( py0*np.log(ny0) + py1*np.log(ny1) )  
 
         error_list.append(error_rate)
 

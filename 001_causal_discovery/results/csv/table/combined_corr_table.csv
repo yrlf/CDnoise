@@ -1,0 +1,6 @@
+,output,output,output,output,output,output,output
+noise_type,instance,instance,instance,pair,pair,sym,sym
+initial_noise,0,0.2,0.4,0.2,0.4,0.2,0.4
+dataset,,,,,,,
+xyguassian,\makecell{-0.0005\pm0.0015\\ p=0.0} &,\makecell{-0.0004\pm0.0028\\ p=0.0} &,\makecell{-0.0001\pm0.0024\\ p=0.0} &,\makecell{0.0008\pm0.0008\\ p=0.0} &,\makecell{0.0018\pm0.0014\\ p=0.0} &,\makecell{0.0008\pm0.0008\\ p=0.0} &,\makecell{0.0018\pm0.0014\\ p=0.0} &
+yxguassian,\makecell{0.6111\pm0.002\\ p=1.0} &,\makecell{0.4323\pm0.0023\\ p=1.0} &,\makecell{0.1418\pm0.0031\\ p=1.0} &,\makecell{0.4427\pm0.0012\\ p=1.0} &,\makecell{0.1442\pm0.0007\\ p=1.0} &,\makecell{0.4427\pm0.0012\\ p=1.0} &,\makecell{0.1442\pm0.0007\\ p=1.0} &

@@ -56,6 +56,24 @@ data_info_dict = {
         "root": "./datasets/waveform/waveform",
         'random_crop': None
     },
+    "secstr": {
+        "mean": (0),
+        "std": (1),
+        "root": "./datasets/secstr/secstr",
+        'random_crop': None
+    },
+    "g241c": {
+        "mean": (0),
+        "std": (1),
+        "root": "./datasets/g241c/g241c",
+        'random_crop': None
+    },
+    "cloth1m": {
+        "mean": (0),
+        "std": (1),
+        "root": "./datasets/waveform/waveform",
+        'random_crop': None
+    },
     "yxguassian": {
         "mean": (0),
         "std": (1),
@@ -67,7 +85,8 @@ data_info_dict = {
         "std": (1),
         "root": "./datasets/xyguassian/xyguassian",
         'random_crop': None
-    },
+    }
+
 }
 
 

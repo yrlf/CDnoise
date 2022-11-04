@@ -1,0 +1,5 @@
+,output,output,output,output,output,output,output
+noise_type,instance,instance,instance,pair,pair,sym,sym
+initial_noise,0,0.2,0.4,0.2,0.4,0.2,0.4
+dataset,,,,,,,
+g241c,\makecell{0.298\pm0.0041\\ p=1.0} &,\makecell{0.2352\pm0.004\\ p=1.0} &,\makecell{0.134\pm0.0059\\ p=0.9998} &,\makecell{0.2838\pm0.0097\\ p=1.0} &,\makecell{0.1747\pm0.01\\ p=1.0} &,\makecell{0.2504\pm0.0063\\ p=1.0} &,\makecell{0.1658\pm0.0054\\ p=1.0} &
